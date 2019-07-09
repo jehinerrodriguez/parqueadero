@@ -8,11 +8,11 @@ import co.com.ceiba.parqueadero.dominio.excepciones.*;
 import co.com.ceiba.parqueadero.dominio.modelo.Vigilante;
 import co.com.ceiba.parqueadero.dominio.repositorio.RepositorioRegistroVehiculo;
 
-public class CrearVehiculoParqueaderoServicio {
+public class RegistrarVehiculoParqueaderoServicio {
 
 	private RepositorioRegistroVehiculo parqueaderoRepositorio;
 	
-	public CrearVehiculoParqueaderoServicio(RepositorioRegistroVehiculo parqueaderoRepositorio){
+	public RegistrarVehiculoParqueaderoServicio(RepositorioRegistroVehiculo parqueaderoRepositorio){
         this.parqueaderoRepositorio = parqueaderoRepositorio;
     }
 	

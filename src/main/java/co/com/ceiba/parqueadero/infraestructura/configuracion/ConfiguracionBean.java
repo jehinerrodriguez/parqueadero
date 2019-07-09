@@ -13,13 +13,13 @@ import co.com.ceiba.parqueadero.dominio.servicio.*;
 public class ConfiguracionBean {
 	
 	@Bean
-    public RegistroVehiculoManejador entradaVehiculoHandler(CrearVehiculoParqueaderoServicio crearServicio) {
+    public RegistroVehiculoManejador entradaVehiculoHandler(RegistrarVehiculoParqueaderoServicio crearServicio) {
         return new RegistroVehiculoManejador(crearServicio);
     }
 
     @Bean
-    public CrearVehiculoParqueaderoServicio crearServicio(RepositorioRegistroVehiculo parqueaderoRepositorio){
-        return new CrearVehiculoParqueaderoServicio(parqueaderoRepositorio);
+    public RegistrarVehiculoParqueaderoServicio crearServicio(RepositorioRegistroVehiculo parqueaderoRepositorio){
+        return new RegistrarVehiculoParqueaderoServicio(parqueaderoRepositorio);
     }
 
     @Bean

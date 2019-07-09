@@ -20,16 +20,10 @@ public final class ConstantesVigilante {
 	
 	public static final String INICIAL_NO_PERMITIDA = "A";
 	
-	public static final int DIA_DOMINGO = 1;
-	public static final int DIA_LUNES = 2;
-	
-	public static final String TIPO_CARRO  = "CARRO";
-	public static final String TIPO_MOTO  = "MOTO";
-	public static final String PLACA_ABC123  = "ABC123";
-	public static final String PLACA_WSD123  = "WSD123";
-	
-	public static final int MINUTOS_POR_HORA = 60;
-	public static final int CERO = 0;	
+	public static final String TIPO_CARRO = "CARRO";
+	public static final String TIPO_MOTO = "MOTO";
+	public static final String PLACA_ABC123 = "ABC123";
+	public static final String PLACA_WSD123 = "WSD123";
 	
 	public static final String MENSAJE_ERROR_SISTEMA = "Error en el sistema.";
 	public static final String MENSAJE_TIPO_VEHICULO_NULO ="Debe ingresar un tipo de vehículo";
@@ -42,8 +36,4 @@ public final class ConstantesVigilante {
 	public static final String MENSAJE_NO_CUPO_DISPONIBLE = "El parqueadero no cuenta actualmente con espacio disponible.";
 	public static final String MENSAJE_CILINDRAJE_NO_VALIDO = "El cilindraje es necesario para registro en el parqueadero.";
 	public static final String MENSAJE_PLACA_NO_VALIDA = "La placa que se está ingresando presenta restricción para el día actual.";
-
-	public static final int  MILISEGUNDOS_A_MINUTOS = 60000;
-
-	
 }

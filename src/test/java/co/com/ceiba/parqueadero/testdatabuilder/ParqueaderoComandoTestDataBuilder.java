@@ -59,6 +59,6 @@ public class ParqueaderoComandoTestDataBuilder {
     }
 
     public ParqueaderoComando build(){
-        return new ParqueaderoComando(id,placa,tipoVehiculo,cilindraje,fechaIngreso,fechaSalida,total);
+        return new ParqueaderoComando(placa,tipoVehiculo,cilindraje);
     }
 }

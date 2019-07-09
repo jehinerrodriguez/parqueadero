@@ -8,7 +8,7 @@ import co.com.ceiba.parqueadero.dominio.excepciones.TipoVehiculoExcepcion;
 import co.com.ceiba.parqueadero.dominio.testbase.TestBase;
 import co.com.ceiba.parqueadero.testdatabuilder.RegistroVehiculoTestDataBuilder;
 
-public class ParqueaderoTest {
+public class VigilanteTest {
 	
 	@Test
     public void placaObligatoriaTest() {

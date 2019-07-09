@@ -30,12 +30,12 @@ public class ParqueaderoRepositorioH2Adaptador implements RepositorioRegistroVeh
 
 	@Override
 	public int cuposPorTipoVehiculo(String tipoVehiculo) {
-		return parqueaderoRepositorioJPA.cuposPorTipoVehiculo(tipoVehiculo);
+		return parqueaderoRepositorioJPA.vehiculosPorTipo(tipoVehiculo);
 	}
 
 	@Override
 	public boolean existeVehiculo(String placa) {
-		return parqueaderoRepositorioJPA.existeVehiculo(placa);
+		return parqueaderoRepositorioJPA.validarPlacaIngresada(placa);
 	}
 
 	@Override

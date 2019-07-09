@@ -15,15 +15,18 @@ public class ParqueaderoComando implements Serializable {
 	private Date fechaSalida;
 	private double total;
 
-	public ParqueaderoComando(Long id, String placa, String tipoVehiculo, String cilindraje, Date fechaIngreso,
-			Date fechaSalida, double total) {
-		this.id = id;
+	public ParqueaderoComando() {
+		
+	}
+	
+	public ParqueaderoComando(String placa, String tipoVehiculo, String cilindraje) {
+		//this.id = id;
 		this.placa = placa;
 		this.tipoVehiculo = tipoVehiculo;
 		this.cilindraje = cilindraje;
-		this.fechaIngreso = fechaIngreso;
-		this.fechaSalida = fechaSalida;
-		this.total = total;
+		//this.fechaIngreso = fechaIngreso;
+		//this.fechaSalida = fechaSalida;
+		//this.total = total;
 	}
 
 	public Long getId() {

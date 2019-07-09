@@ -12,6 +12,10 @@ import javax.persistence.TableGenerator;
 @Entity(name = "ParqueaderoEntidad")
 public class ParqueaderoEntidad {
 	
+	public ParqueaderoEntidad() {
+		
+	}
+	
 	public ParqueaderoEntidad(Long id, String placa, String tipoVehiculo, String cilindraje, Date fechaIngreso, Date fechaSalida, double valorTotal) {
 		this.id = id;
 		this.placa = placa;

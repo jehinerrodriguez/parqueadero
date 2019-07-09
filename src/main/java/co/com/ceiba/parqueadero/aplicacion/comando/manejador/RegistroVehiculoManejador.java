@@ -4,13 +4,13 @@ import java.util.Date;
 
 import co.com.ceiba.parqueadero.aplicacion.comando.ParqueaderoComando;
 import co.com.ceiba.parqueadero.dominio.modelo.Vigilante;
-import co.com.ceiba.parqueadero.dominio.servicio.CrearVehiculoParqueaderoServicio;
+import co.com.ceiba.parqueadero.dominio.servicio.RegistrarVehiculoParqueaderoServicio;
 
 public class RegistroVehiculoManejador {
 
-	private final CrearVehiculoParqueaderoServicio crearServicio;
+	private final RegistrarVehiculoParqueaderoServicio crearServicio;
 
-	public RegistroVehiculoManejador(CrearVehiculoParqueaderoServicio servicio) {
+	public RegistroVehiculoManejador(RegistrarVehiculoParqueaderoServicio servicio) {
 		this.crearServicio = servicio;
 	}
 
