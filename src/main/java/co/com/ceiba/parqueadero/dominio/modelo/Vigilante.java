@@ -15,13 +15,13 @@ public class Vigilante {
 	private double total;
 	
 	public Vigilante(Long id, String placa, String tipoVehiculo, String cilindraje, Date fechaIngreso, Date fechaSalida, double total) {
-		ValidarVigilante.validarDatoObligatorio(placa, ConstantesVigilante.ERROR_PLACA_NULA);
-		ValidarVigilante.validarDatoObligatorio(tipoVehiculo, ConstantesVigilante.MENSAJE_TIPO_VEHICULO_NULO);
+		ValidarVigilante.validarDatos(placa, ConstantesVigilante.ERROR_PLACA_NULA);
+		ValidarVigilante.validarDatos(tipoVehiculo, ConstantesVigilante.MENSAJE_TIPO_VEHICULO_NULO);
 		
 		ValidarVigilante.validarTipoVehiculo(tipoVehiculo, ConstantesVigilante.MENSAJE_ERROR_TIPO_VEHICULO);
 		
 		if(tipoVehiculo.equalsIgnoreCase(ConstantesVigilante.TIPO_MOTO)) {
-			ValidarVigilante.validarDatoObligatorio(cilindraje, ConstantesVigilante.MENSAJE_CILINDRAJE_NO_VALIDO);
+			ValidarVigilante.validarDatos(cilindraje, ConstantesVigilante.MENSAJE_CILINDRAJE_NO_VALIDO);
 		}
 		
 		this.id = id;

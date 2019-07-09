@@ -3,17 +3,17 @@ package co.com.ceiba.parqueadero.infraestructura.controlador;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.com.ceiba.parqueadero.aplicacion.comando.ParqueaderoComando;
-import co.com.ceiba.parqueadero.aplicacion.comando.manejador.EntradaVehiculoHandler;
-import co.com.ceiba.parqueadero.aplicacion.comando.manejador.SalidaVehiculoHandler;
+import co.com.ceiba.parqueadero.aplicacion.comando.manejador.RegistroVehiculoManejador;
+import co.com.ceiba.parqueadero.aplicacion.comando.manejador.RetiroVehiculoManejador;
 import co.com.ceiba.parqueadero.aplicacion.consulta.ListaVehiculoHandler;
 import co.com.ceiba.parqueadero.dominio.modelo.Vigilante;
 import io.swagger.annotations.ApiOperation;
@@ -22,19 +22,19 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/parqueadero") 
 public class ParqueaderoControlador {
 
-	private EntradaVehiculoHandler entradaVehiculoHandler;
-	private SalidaVehiculoHandler salidaVehiculoHandler;
+	private RegistroVehiculoManejador entradaVehiculoHandler;
+	private RetiroVehiculoManejador retiroVehiculoManejador;
 	private ListaVehiculoHandler listaVehiculoHandler;
 	
 	@Autowired
-    public ParqueaderoControlador(EntradaVehiculoHandler entradaVehiculoHandler, 
-    		SalidaVehiculoHandler salidaVehiculoHandler, ListaVehiculoHandler listaVehiculoHandler){
+    public ParqueaderoControlador(RegistroVehiculoManejador entradaVehiculoHandler, 
+    		RetiroVehiculoManejador salidaVehiculoHandler, ListaVehiculoHandler listaVehiculoHandler){
         this.entradaVehiculoHandler = entradaVehiculoHandler;
-        this.salidaVehiculoHandler = salidaVehiculoHandler;
+        this.retiroVehiculoManejador = salidaVehiculoHandler;
         this.listaVehiculoHandler = listaVehiculoHandler;
     }
 	
-	@RequestMapping(method= RequestMethod.GET)
+	@GetMapping
 	@ApiOperation("listar")
     public List<Vigilante> listaVehiculos() {
         return this.listaVehiculoHandler.listaVehiculos();
@@ -49,6 +49,6 @@ public class ParqueaderoControlador {
     @PutMapping("/{placa}")
     @ApiOperation("salida")
     public void getSalida(@PathVariable("placa") String placa) {
-        this.salidaVehiculoHandler.actualizar(placa);
+        this.retiroVehiculoManejador.actualizar(placa);
     }
 }

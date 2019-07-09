@@ -6,11 +6,11 @@ import co.com.ceiba.parqueadero.aplicacion.comando.ParqueaderoComando;
 import co.com.ceiba.parqueadero.dominio.modelo.Vigilante;
 import co.com.ceiba.parqueadero.dominio.servicio.CrearVehiculoParqueaderoServicio;
 
-public class EntradaVehiculoHandler {
+public class RegistroVehiculoManejador {
 
 	private final CrearVehiculoParqueaderoServicio crearServicio;
 
-	public EntradaVehiculoHandler(CrearVehiculoParqueaderoServicio servicio) {
+	public RegistroVehiculoManejador(CrearVehiculoParqueaderoServicio servicio) {
 		this.crearServicio = servicio;
 	}
 

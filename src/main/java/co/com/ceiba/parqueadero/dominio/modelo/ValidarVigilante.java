@@ -9,7 +9,7 @@ public final class ValidarVigilante {
 	private ValidarVigilante() {
 	}
     
-    public static void validarDatoObligatorio(Object valorIngresado, String mensajeExcepcion){
+    public static void validarDatos(Object valorIngresado, String mensajeExcepcion){
         if(valorIngresado == null || valorIngresado.equals("")) {
             throw new ValorRequeridoExcepcion(mensajeExcepcion);
         }

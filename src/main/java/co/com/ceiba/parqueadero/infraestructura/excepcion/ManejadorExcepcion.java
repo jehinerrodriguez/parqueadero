@@ -35,7 +35,7 @@ public class ManejadorExcepcion {
         ResponseEntity<ExcepcionInfraestructura> response;
 
         String nombre = excepcion.getClass().getSimpleName();
-        String mensaje = excepcion.getMensaje();
+        String mensaje = excepcion.getMensajeExcepcion();
         Integer code = CODIGOS_ESTADO.get(nombre);
 
         if (code != null) {

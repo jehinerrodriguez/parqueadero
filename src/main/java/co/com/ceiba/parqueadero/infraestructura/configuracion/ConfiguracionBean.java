@@ -3,8 +3,8 @@ package co.com.ceiba.parqueadero.infraestructura.configuracion;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import co.com.ceiba.parqueadero.aplicacion.comando.manejador.EntradaVehiculoHandler;
-import co.com.ceiba.parqueadero.aplicacion.comando.manejador.SalidaVehiculoHandler;
+import co.com.ceiba.parqueadero.aplicacion.comando.manejador.RegistroVehiculoManejador;
+import co.com.ceiba.parqueadero.aplicacion.comando.manejador.RetiroVehiculoManejador;
 import co.com.ceiba.parqueadero.aplicacion.consulta.ListaVehiculoHandler;
 import co.com.ceiba.parqueadero.dominio.repositorio.RepositorioRegistroVehiculo;
 import co.com.ceiba.parqueadero.dominio.servicio.*;
@@ -13,8 +13,8 @@ import co.com.ceiba.parqueadero.dominio.servicio.*;
 public class ConfiguracionBean {
 	
 	@Bean
-    public EntradaVehiculoHandler entradaVehiculoHandler(CrearVehiculoParqueaderoServicio crearServicio) {
-        return new EntradaVehiculoHandler(crearServicio);
+    public RegistroVehiculoManejador entradaVehiculoHandler(CrearVehiculoParqueaderoServicio crearServicio) {
+        return new RegistroVehiculoManejador(crearServicio);
     }
 
     @Bean
@@ -33,8 +33,8 @@ public class ConfiguracionBean {
     }
     
     @Bean
-    public SalidaVehiculoHandler salidaVehiculoHandler(ActualizarSalidaVehiculoParqueaderoServicio actualizarServicio) {
-        return new SalidaVehiculoHandler(actualizarServicio);
+    public RetiroVehiculoManejador salidaVehiculoHandler(ActualizarSalidaVehiculoParqueaderoServicio actualizarServicio) {
+        return new RetiroVehiculoManejador(actualizarServicio);
     }
     
     @Bean

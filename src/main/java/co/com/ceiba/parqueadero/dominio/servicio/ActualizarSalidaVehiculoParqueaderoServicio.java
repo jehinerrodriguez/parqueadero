@@ -17,7 +17,7 @@ public class ActualizarSalidaVehiculoParqueaderoServicio {
     }
 	
 	public double actualizar(String placa){
-		ValidarVigilante.validarDatoObligatorio(placa, ConstantesVigilante.ERROR_PLACA_NULA);
+		ValidarVigilante.validarDatos(placa, ConstantesVigilante.ERROR_PLACA_NULA);
 		Vigilante parqueadero = validarRegistro(placa);
 		parqueadero.setFechaSalida(Calendar.getInstance().getTime());
 		if(parqueadero.getTipoVehiculo().equalsIgnoreCase(ConstantesVigilante.TIPO_MOTO)) {
