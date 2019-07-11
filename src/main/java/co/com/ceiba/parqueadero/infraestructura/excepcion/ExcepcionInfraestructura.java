@@ -3,8 +3,8 @@ package co.com.ceiba.parqueadero.infraestructura.excepcion;
 public class ExcepcionInfraestructura extends RuntimeException {
     
 	private static final long serialVersionUID = 1L;
-	private final String nombre;
-    private final String mensajeExcepcion;
+	private String nombre;
+    private String mensajeExcepcion;
 
     public ExcepcionInfraestructura(String nombre, String mensajeExcepcion) {
     	super();
