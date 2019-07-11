@@ -32,7 +32,7 @@ public final class ConstantesVigilante {
 	public static final String MENSAJE_ERROR_TIPO_VEHICULO ="El tipo de vehículo ingresado no es válido.";
 	public static final String MENSAJE_ERROR_ACTUALIZAR = "El registro actual presenta errores de actualización.";
 	public static final String MENSAJE_VEHICULO_EN_PARQUEADERO = "El vehículo ya se encuentra en en parqueadero.";
-	public static final String MENSAJE_NO_VEHICULO_EN_PARQUEADERO = "El vehículo no se encuentra en en parqueadero.";
+	public static final String MENSAJE_NO_VEHICULO_EN_PARQUEADERO = "El vehículo no se encuentra en el parqueadero.";
 	public static final String MENSAJE_NO_CUPO_DISPONIBLE = "El parqueadero no cuenta actualmente con espacio disponible.";
 	public static final String MENSAJE_CILINDRAJE_NO_VALIDO = "El cilindraje es necesario para registro en el parqueadero.";
 	public static final String MENSAJE_PLACA_NO_VALIDA = "La placa que se está ingresando presenta restricción para el día actual.";

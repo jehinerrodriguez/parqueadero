@@ -10,8 +10,8 @@ public class RetiroVehiculoManejador {
         this.actualizarServicio = servicio;
     }
 
-    public  void actualizar(String placa){
-        this.actualizarServicio.actualizar(placa);
+    public double actualizar(String placa){
+        return this.actualizarServicio.actualizar(placa);
     }
 
 }

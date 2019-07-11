@@ -16,7 +16,7 @@ public interface ParqueaderoRepositorioJPA extends CrudRepository<ParqueaderoEnt
     @Query("SELECT p FROM ParqueaderoEntidad p WHERE p.placa = :placa AND p.fechaSalida IS NULL")
     ParqueaderoEntidad buscarPorPlaca(@Param("placa") String placa);
 
-    @Query("SELECT p FROM ParqueaderoEntidad p")
+    @Query("SELECT p FROM ParqueaderoEntidad p WHERE p.fechaSalida IS NULL")
     List<ParqueaderoEntidad> buscarRegistroVehiculos();
 
     @Query("SELECT CASE WHEN COUNT(p.id) > 0 THEN true ELSE false END FROM ParqueaderoEntidad p WHERE p.placa = :placa AND p.fechaSalida IS NULL")
