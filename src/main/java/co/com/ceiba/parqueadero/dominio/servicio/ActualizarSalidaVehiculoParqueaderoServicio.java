@@ -52,9 +52,8 @@ public class ActualizarSalidaVehiculoParqueaderoServicio {
 		
 		String cilindraje = vigilante.getCilindraje();
 		
-		if(cilindraje == null) {
+		if(cilindraje == null) 
 			cilindraje = "0";
-		}
 		
 		Integer cilindrajeNumerico = Integer.parseInt(cilindraje);
 		

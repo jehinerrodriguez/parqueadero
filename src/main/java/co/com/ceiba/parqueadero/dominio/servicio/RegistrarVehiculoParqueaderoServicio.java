@@ -11,42 +11,43 @@ import co.com.ceiba.parqueadero.dominio.repositorio.RepositorioRegistroVehiculo;
 public class RegistrarVehiculoParqueaderoServicio {
 
 	private RepositorioRegistroVehiculo parqueaderoRepositorio;
-	
-	public RegistrarVehiculoParqueaderoServicio(RepositorioRegistroVehiculo parqueaderoRepositorio){
-        this.parqueaderoRepositorio = parqueaderoRepositorio;
-    }
-	
-	public Vigilante crear(Vigilante vigilante){
+
+	public RegistrarVehiculoParqueaderoServicio(RepositorioRegistroVehiculo parqueaderoRepositorio) {
+		this.parqueaderoRepositorio = parqueaderoRepositorio;
+	}
+
+	public Vigilante crear(Vigilante vigilante) {
 		validarRegistro(vigilante.getPlaca());
 		validarCupo(vigilante.getTipoVehiculo());
-		validarEntrada(vigilante.getPlaca(),vigilante.getFechaIngreso());
-        return this.parqueaderoRepositorio.crearVehiculo(vigilante);
-    }
+		validarEntrada(vigilante.getPlaca(), vigilante.getFechaIngreso());
+		return this.parqueaderoRepositorio.crearVehiculo(vigilante);
+	}
 	
-	private void validarRegistro(String placa) {
-        boolean existe = parqueaderoRepositorio.existeVehiculo(placa);
-        if(existe) {
-            throw new VehiculoDuplicadoExcepcion(ConstantesVigilante.MENSAJE_VEHICULO_EN_PARQUEADERO);
-        }
-    }
-	
-	private void validarCupo(String tipoVehiculo) {
-		if(tipoVehiculo.equalsIgnoreCase(ConstantesVigilante.TIPO_MOTO) && 
-		   parqueaderoRepositorio.cuposPorTipoVehiculo(tipoVehiculo) == ConstantesVigilante.CUPO_MAXIMO_MOTOS) {
-			throw new ValidarCupoExcepcion(ConstantesVigilante.MENSAJE_NO_CUPO_DISPONIBLE);
-		}
-		if(tipoVehiculo.equalsIgnoreCase(ConstantesVigilante.TIPO_CARRO) && 
-		   parqueaderoRepositorio.cuposPorTipoVehiculo(tipoVehiculo) == ConstantesVigilante.CUPO_MAXIMO_CARROS) {
-			throw new ValidarCupoExcepcion(ConstantesVigilante.MENSAJE_NO_CUPO_DISPONIBLE);
-		}
-    }
-	
+
 	private void validarEntrada(String placa, Date fechaIngreso) {
 		Calendar fechaActual = Calendar.getInstance();
 		fechaActual.setTimeInMillis(fechaIngreso.getTime());
-		int day = fechaActual.get(Calendar.DAY_OF_WEEK);
-		if (placa.startsWith(ConstantesVigilante.INICIAL_NO_PERMITIDA) || placa.startsWith("a") && (day != Calendar.MONDAY || day != Calendar.SUNDAY)) {
-			throw new PlacaExcepcion(ConstantesVigilante.MENSAJE_PLACA_NO_VALIDA);
+		int diaIngreso = fechaActual.get(Calendar.DAY_OF_WEEK);
+		if (placa.startsWith(ConstantesVigilante.INICIAL_NO_PERMITIDA) && diaIngreso != ConstantesVigilante.DIA_LUNES
+				&& diaIngreso != ConstantesVigilante.DIA_DOMINGO)
+			throw new PlacaExcepcion(ConstantesVigilante.INICIAL_NO_PERMITIDA);
+	}
+
+	private void validarRegistro(String placa) {
+		boolean existe = parqueaderoRepositorio.existeVehiculo(placa);
+		if (existe) {
+			throw new VehiculoDuplicadoExcepcion(ConstantesVigilante.MENSAJE_VEHICULO_EN_PARQUEADERO);
 		}
-    }
+	}
+
+	private void validarCupo(String tipoVehiculo) {
+		if (tipoVehiculo.equalsIgnoreCase(ConstantesVigilante.TIPO_MOTO)
+				&& parqueaderoRepositorio.cuposPorTipoVehiculo(tipoVehiculo) == ConstantesVigilante.CUPO_MAXIMO_MOTOS) {
+			throw new ValidarCupoExcepcion(ConstantesVigilante.MENSAJE_NO_CUPO_DISPONIBLE);
+		}
+		if (tipoVehiculo.equalsIgnoreCase(ConstantesVigilante.TIPO_CARRO) && parqueaderoRepositorio
+				.cuposPorTipoVehiculo(tipoVehiculo) == ConstantesVigilante.CUPO_MAXIMO_CARROS) {
+			throw new ValidarCupoExcepcion(ConstantesVigilante.MENSAJE_NO_CUPO_DISPONIBLE);
+		}
+	}
 }

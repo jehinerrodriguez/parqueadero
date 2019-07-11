@@ -25,6 +25,9 @@ public final class ConstantesVigilante {
 	public static final String PLACA_ABC123 = "ABC123";
 	public static final String PLACA_WSD123 = "WSD123";
 	
+	public static final int DIA_DOMINGO = 1;
+	public static final int DIA_LUNES = 2;
+	
 	public static final String MENSAJE_ERROR_SISTEMA = "Error en el sistema.";
 	public static final String MENSAJE_TIPO_VEHICULO_NULO ="Debe ingresar un tipo de vehículo";
 	public static final String ERROR_PLACA_NULA = "Debe ingresar un valor correcto para la placa";
